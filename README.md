@@ -44,9 +44,9 @@
 5. Подключитесь к консоли ВМ через ssh и выполните команду ```curl ifconfig.me```.
 Примечание: К OS ubuntu "out of a box, те из коробки" необходимо подключаться под пользователем ubuntu: ```"ssh ubuntu@vm_ip_address"```. Предварительно убедитесь, что ваш ключ добавлен в ssh-агент: ```eval $(ssh-agent) && ssh-add``` Вы познакомитесь с тем как при создании ВМ создать своего пользователя в блоке metadata в следующей лекции.;
 
-  ![изображение](https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_73.png)
+  ![изображение](https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_84.png)
 
-  ![изображение](https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_74.png)
+  ![изображение](https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_85.png)
 
 6. Ответьте, как в процессе обучения могут пригодиться параметры ```preemptible = true``` и ```core_fraction=5``` в параметрах ВМ.
 
