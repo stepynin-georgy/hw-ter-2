@@ -144,7 +144,7 @@ name        = local.vm_web_lname
      }
    }
    ```
-3. Создайте и используйте отдельную map(object) переменную для блока metadata, она должна быть общая для всех ваших ВМ.
+2. Создайте и используйте отдельную map(object) переменную для блока metadata, она должна быть общая для всех ваших ВМ.
    ```
    пример из terraform.tfvars:
    metadata = {
@@ -153,7 +153,9 @@ name        = local.vm_web_lname
    }
    ```  
   
-5. Найдите и закоментируйте все, более не используемые переменные проекта.
+3. Найдите и закоментируйте все, более не используемые переменные проекта.
+
+4. Проверьте terraform plan. Изменений быть не должно.
 
 ```
    resources {
@@ -162,15 +164,14 @@ name        = local.vm_web_lname
     memory        = var.vm_db_web_resources.web_res.memory
   }
 ```
+
 ```
   resources {
     core_fraction = var.vm_db_web_resources.db_res.core_fraction
     cores         = var.vm_db_web_resources.db_res.cores
     memory        = var.vm_db_web_resources.db_res.memory
-  }
+  } 
 ```
-
-7. Проверьте terraform plan. Изменений быть не должно.
 
    [main.tf](https://github.com/stepynin-georgy/hw-ter-2/blob/main/main.tf)
    
