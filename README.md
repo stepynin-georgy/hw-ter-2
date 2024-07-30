@@ -30,7 +30,7 @@
 2. Создайте сервисный аккаунт и ключ. [service_account_key_file](https://terraform-provider.yandexcloud.net).
 3. Сгенерируйте новый или используйте свой текущий ssh-ключ. Запишите его открытую(public) часть в переменную **vms_ssh_public_root_key**.
 
-   !(изображение)[https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_68.png]
+   ![изображение](https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_68.png)
    
 4. Инициализируйте проект, выполните код. Исправьте намеренно допущенные синтаксические ошибки. Ищите внимательно, посимвольно. Ответьте, в чём заключается их суть.
 
@@ -39,14 +39,14 @@
 - ```core_fraction = 5``` - недопустимое значение. Поменял на 20 - гарантированная доля CPU.
 - ```cores = 1``` - недопустимое значение. Поменял на 2 - количество ядер.
 
-  !(изображение)[https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_72.png]
+  ![изображение](https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_72.png)
   
 5. Подключитесь к консоли ВМ через ssh и выполните команду ```curl ifconfig.me```.
 Примечание: К OS ubuntu "out of a box, те из коробки" необходимо подключаться под пользователем ubuntu: ```"ssh ubuntu@vm_ip_address"```. Предварительно убедитесь, что ваш ключ добавлен в ssh-агент: ```eval $(ssh-agent) && ssh-add``` Вы познакомитесь с тем как при создании ВМ создать своего пользователя в блоке metadata в следующей лекции.;
 
-  !(изображение)[https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_73.png]
+  ![изображение](https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_73.png)
 
-  !(изображение)[https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_74.png]
+  ![изображение](https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_74.png)
 
 6. Ответьте, как в процессе обучения могут пригодиться параметры ```preemptible = true``` и ```core_fraction=5``` в параметрах ВМ.
 
@@ -64,21 +64,26 @@
 
 1. Замените все хардкод-**значения** для ресурсов **yandex_compute_image** и **yandex_compute_instance** на **отдельные** переменные. К названиям переменных ВМ добавьте в начало префикс **vm_web_** .  Пример: **vm_web_name**.
 2. Объявите нужные переменные в файле variables.tf, обязательно указывайте тип переменной. Заполните их **default** прежними значениями из main.tf.
+   
    [main.tf](https://github.com/stepynin-georgy/hw-ter-2/blob/main/main.tf)
+   
    [variables.tf](https://github.com/stepynin-georgy/hw-ter-2/blob/main/variables.tf)
+   
 3. Проверьте terraform plan. Изменений быть не должно.
 
-   !(изображение)[https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_76.png]
+   ![изображение](https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_76.png)
 
 ### Задание 3
 
 1. Создайте в корне проекта файл 'vms_platform.tf' . Перенесите в него все переменные первой ВМ.
+   
    [vms_platform.tf](https://github.com/stepynin-georgy/hw-ter-2/blob/main/vms_platform.tf)
+   
 2. Скопируйте блок ресурса и создайте с его помощью вторую ВМ в файле main.tf: **"netology-develop-platform-db"** ,  ```cores  = 2, memory = 2, core_fraction = 20```. Объявите её переменные с префиксом **vm_db_** в том же файле ('vms_platform.tf').  ВМ должна работать в зоне "ru-central1-b"
 3. Примените изменения.
 
-   !(изображение)[https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_88.png]
-   !(изображение)[https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_90.png]
+   ![изображение](https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_88.png)
+   ![изображение](https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_90.png)
 
 ### Задание 4
 
@@ -89,7 +94,7 @@
 
 В качестве решения приложите вывод значений ip-адресов команды ```terraform output```.
 
-   !(изображение)[https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_91.png]
+   ![изображение](https://github.com/stepynin-georgy/hw-ter-2/blob/main/img/Screenshot_91.png)
 
 ### Задание 5
 
@@ -168,6 +173,7 @@ name        = local.vm_web_lname
 7. Проверьте terraform plan. Изменений быть не должно.
 
    [main.tf](https://github.com/stepynin-georgy/hw-ter-2/blob/main/main.tf)
+   
    [variables.tf](https://github.com/stepynin-georgy/hw-ter-2/blob/main/variables.tf)
 
 
